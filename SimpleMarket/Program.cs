@@ -8,58 +8,52 @@ public static class Program
 {
     private static void Main(string[] args)
     {
-        Product[] products = new Product[5];
-
-        products[0] = new Product
+        while (true)
         {
-            Name = "PC Monitor",
-            Category = "Electronics",
-            Price = 4000m,
-            Discount = 20,
-            Quantity = 3
-        };
 
-        products[1] = new Product
-        {
-            Name = "PC Case",
-            Category = "Electronics",
-            Price = 2500m,
-            Discount = 30,
-            Quantity = 2
-        };
+            var product = new Product();
 
-        products[2] = new Product
-        {
-            Name = "Keyboard",
-            Category = "Electronics",
-            Price = 199.99m,
-            Discount = 30,
-            Quantity = 5
-        };
+            Console.WriteLine("Enter product name:");
+            var name = Console.ReadLine();
+            product.Name = name;
 
-        products[3] = new Product
-        {
-            Name = "Mouse",
-            Category = "Electronics",
-            Price = 99.99m,
-            Discount = 20,
-            Quantity = 2
-        };
 
-        products[4] = new Product
-        {
-            Name = "GPU",
-            Category = "Electronics",
-            Price = 5000m,
-            Discount = 20,
-            Quantity = 1
-        };
+            Console.WriteLine("Enter product category");
+            var category = Console.ReadLine();
+            product.Category = category;
 
-        foreach (var product in products) 
+
+            Console.WriteLine("Enter product price");
+            var price = Console.ReadLine();
+            product.Price = decimal.Parse(price);
+
+
+            Console.WriteLine("Enter product discount");
+            var discount = Console.ReadLine();
+            product.Discount = decimal.Parse(discount);
+
+
+            Console.WriteLine("Enter product Quantity");
+            var quantity = Console.ReadLine();
+            product.Quantity = int.Parse(quantity);
+
+
+            DataBase.Products.Add(product);
+
+            Console.WriteLine("to continue press Y");
+            var answer = Console.ReadLine();
+            if (answer.ToUpper() != "Y")
+            {
+                break;
+            }
+        }
+
+        foreach (var product in DataBase.Products)
         {
             product.CalculateFinalPrice();
             product.DisplayInfo();
         }
+
     }
 }
 
