@@ -8,6 +8,45 @@ namespace SimpleMarket
 {
     internal static class DataBase
     {
+        public static List<Person> Persons = new List<Person>
+        {
+            new Person
+            {
+                FirstName = "Nick",
+                LastName = "Kvizhinadze",
+                Gender = "unknow",
+                Age = 8,
+                PersonalId = "62000856475"
+            },
+
+            new Person
+            {
+                FirstName = "Laura",
+                LastName = "kutuwelashvili",
+                Gender = "kacitkania",
+                Age = 69,
+                PersonalId = "62046464475"
+            },
+
+            new Person
+            {
+                FirstName = "Emzari",
+                LastName = "Gugunava",
+                Gender = "Mamakaci",
+                Age = 49,
+                PersonalId = "010010288454"
+            },
+
+            new Person
+            {
+                FirstName = "Taliko",
+                LastName = "Siradze",
+                Gender = "Qali",
+                Age = 27,
+                PersonalId = "656565989896"
+            }
+
+        };
         public static List<Product> Products = new List<Product>
         {
             new Product
