@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleMarket.Entities;
+using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Linq;
 
@@ -8,9 +9,25 @@ public static class Program
 {
     private static void Main(string[] args)
     {
+        //var person1 = new Person();
+        //person1.FirstName = "mazda";
+
+        //var emp = new Employ();
+        //emp.FirstName = "emp";
+
+        //Console.WriteLine("person:");
+        //person1.DisplayInfo();
+
+
+        //Console.WriteLine("employ:");
+        //emp.DisplayInfo();
+
+        //return;
+
         while (true)
         {
             var product = CreateProduct();
+            product.Name = "name";
 
             DataBase.Products.Add(product);
 
@@ -57,7 +74,7 @@ public static class Program
     {
         Console.WriteLine("Enter First Name:");
         var firstName = Console.ReadLine();
-       
+
 
         Console.WriteLine("Enter Last Name:");
         var lastName = Console.ReadLine();

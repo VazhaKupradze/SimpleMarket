@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleMarket.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,7 +56,7 @@ namespace SimpleMarket
                         Category = "Electronics",
                         Price = 4000m,
                         Discount = 20,
-                        Quantity = 3
+                        Quantity = 6
                     },
             new Product
                     {

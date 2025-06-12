@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleMarket
+namespace SimpleMarket.Entities
 {
     public class Product
     {
-        public string Name;
-        public string Category;
-        public decimal Price;
-        public decimal Discount;
-        public decimal DiscountedAmount;
-        public decimal FinalPrice;
-        public int Quantity;
+        public string Name { get; set; }
+
+        public string Category { get; set; }
+        public decimal Price { get; set; }
+        public decimal Discount { get; set; }
+        public decimal DiscountedAmount { get; set; }
+        public decimal FinalPrice { get; set; }
+        public int Quantity { get; set; }
 
         public void DisplayInfo()
         {
@@ -30,8 +31,18 @@ namespace SimpleMarket
 
         public void CalculateFinalPrice()
         {
-            DiscountedAmount = (Price * Discount) / 100;
+            DiscountedAmount = Price * Discount / 100;
             FinalPrice = Price - DiscountedAmount;
+        }
+
+        public void CalculateFinalPrice(decimal price)
+        {
+            Console.WriteLine(price);
+        }
+
+        public void CalculateFinalPrice(decimal price, string rame)
+        {
+            Console.WriteLine(price);
         }
 
         public bool IsAvailable()
